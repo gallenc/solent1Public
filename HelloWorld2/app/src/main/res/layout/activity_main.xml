@@ -4,6 +4,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="@string/hello" />
+
+    <RelativeLayout android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:id="@+id/btn1" android:text="@string/calculate"
+            android:layout_alignParentRight="true"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/instructions"
+            android:textSize="10pt"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/tv2" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/et1"
+            android:layout_toRightOf="@id/tv2"
+            android:inputType="numberDecimal"
+            android:textSize="10pt"
+            />
+
+    </RelativeLayout>
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:id="@+id/tv1"
+        android:textSize="10pt"/>
+
 </LinearLayout>

@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">HelloWorld2</string>
     <string name="action_settings">Settings</string>
-    <string name="hello">Hello everyone!</string>
+    <string name="calculate">Calculate!</string>
+    <string name="instructions">Enter Year of Birth</string>
+    <string name="negativeyear">Error: Birth year %s cannot be negative</string>
+    <string name="greateryear">Error: Birth year:  %s cannot be greater than %s</string>
+    <string name="ageis">Your age is: %s</string>
 </resources>
