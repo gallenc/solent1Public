@@ -15,7 +15,7 @@ http://www.free-map.org.uk/course//mad/part2.php
 6. looked at onCreate() and auto generated R class
 7. looked at Android API levels and AppCompatActivity
 
-Q Why is it good to seperate layouts and strings from Java code?
+Q Why is it good to separate layouts and strings from Java code?
 
 ## Session 2 Key teaching points
 
