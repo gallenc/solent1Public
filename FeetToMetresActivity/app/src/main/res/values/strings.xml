@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Feet To Metres Activity</string>
+    <string name="convertBtn">convert ft to m</string>
+    <string name="tv2">Feet: </string>
+</resources>
