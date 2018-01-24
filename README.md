@@ -1,7 +1,9 @@
 # solent1Public
 Miscellaneous solent work
+http://www.free-map.org.uk/course
 
 # Week 1 Session 2 
+http://www.free-map.org.uk/course//mad/part2.php
 
 ## Recap Session 1
 
