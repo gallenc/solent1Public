@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <RelativeLayout android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout android:orientation="horizontal"
+        android:id="@+id/panel1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <Button android:layout_width="0px"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn1" android:text="@string/button1"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+
+        <Button android:layout_width="0px"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn2"
+            android:text="@string/button2"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"/>
+    </LinearLayout>
+
+        <!--Text panel with initial message-->
+        <EditText
+            android:gravity="fill_horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/et1"
+            android:layout_above="@id/panel1"
+            android:inputType="textMultiLine"
+            android:textSize="12pt"
+            android:hint="@string/initialMessage"
+            />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
