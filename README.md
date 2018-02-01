@@ -1,4 +1,5 @@
 
+
 # solent1Public
 Miscellaneous solent work
 http://www.free-map.org.uk/course
@@ -12,6 +13,11 @@ Once this is done, the SDK path should be set automatically (students will not n
 
 # GIT
 http://www.free-map.org.uk/course/mad/git_cheat_sheet.docx)
+
+if you cant get git in android studio to work use the windows client
+https://git-scm.com/download/win
+download and install the 64-bit Git for Windows Portable. 
+once installed right click on your folder and you will see git bash which is the command line for git.
 
 
 # Week 1 Session 2 
