@@ -1,3 +1,4 @@
+
 # solent1Public
 Miscellaneous solent work
 http://www.free-map.org.uk/course
@@ -47,6 +48,14 @@ See https://stackoverflow.com/questions/5025910/difference-between-id-and-id-in-
 Essentially @+id creates a new reference and @id references an existing refernece. However @+id will not change an existing reference so is safe to use (apparently).
 
 2. layouts Linear / Relative
+https://developer.android.com/guide/topics/ui/layout/linear.html
+https://developer.android.com/guide/topics/ui/layout/relative.html
+
+3. maps 
+installing new library
+centering map on coordinates
+
+
 
 
 
