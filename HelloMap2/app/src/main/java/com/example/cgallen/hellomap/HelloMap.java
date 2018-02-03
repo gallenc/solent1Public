@@ -1,5 +1,6 @@
 package com.example.cgallen.hellomap;
 
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.view.View.OnClickListener;
         import android.support.v7.app.AppCompatActivity;
@@ -58,14 +59,22 @@ public class HelloMap extends AppCompatActivity implements OnClickListener {
             if(latitude>90 || latitude <-90) {
                 geoEditText.setText("");
                 geoEditText.setHint("invalid latitude: "+input);
+                String message="invalid latitude";
+                popupMessage(message);
                 return null;
             }
             return latitude;
         } catch (Exception e){
             geoEditText.setText("");
             geoEditText.setHint("invalid latitude: "+input);
+            String message="invalid latitude";
+            popupMessage(message);
             return null;
         }
+    }
+
+    private void popupMessage(String message){
+        new AlertDialog.Builder(this).setPositiveButton("OK",null).setMessage(message).show();
     }
 
     //  long +180 to -180
@@ -76,12 +85,16 @@ public class HelloMap extends AppCompatActivity implements OnClickListener {
             if(longitude>180 || longitude <-180) {
                 geoEditText.setText("");
                 geoEditText.setHint("invalid longitude: "+input);
+                String message="invalid logitude";
+                popupMessage(message);
                 return null;
             }
             return longitude;
         } catch (Exception e){
             geoEditText.setText("");
             geoEditText.setHint("invalid longitude: "+input);
+            String message="invalid longitude";
+            popupMessage(message);
             return null;
         }
     }
