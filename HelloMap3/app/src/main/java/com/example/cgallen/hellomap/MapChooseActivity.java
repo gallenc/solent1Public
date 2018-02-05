@@ -19,8 +19,7 @@ public class MapChooseActivity extends Activity implements OnClickListener {
         cyclemap.setOnClickListener(this);
     }
 
-    public void onClick(View v)
-    {
+    public void onClick(View v) {
         Intent intent = new Intent();
         Bundle bundle=new Bundle();
         boolean cyclemap=false;
