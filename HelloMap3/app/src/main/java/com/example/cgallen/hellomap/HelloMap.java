@@ -42,18 +42,12 @@ public class HelloMap extends Activity {
 
         centerMap();
 
-
     }
 
     private void centerMap(){
         mv = (MapView)findViewById(R.id.map1);
-
         mv.setBuiltInZoomControls(true);
         mv.getController().setZoom(zoom);
-        // zoom was 16
-        // mv.getController().setCenter(new GeoPoint(51.05,-0.72));
-        // aLatitude: 50.9246, aLongitude:  -1.3705 burnett close
-        // http://www.informationfreeway.org/
         mv.getController().setCenter(new GeoPoint(latitude, longitude));
     }
 
@@ -72,8 +66,14 @@ public class HelloMap extends Activity {
             return true;
         } else  if(item.getItemId() == R.id.setlocation) {
             // react to the menu item being selected...
-            Intent intent = new Intent(this,ChooseLocationActivity.class);
-            startActivityForResult(intent,1);
+            Intent requestIntent = new Intent(this,ChooseLocationActivity.class);
+            Bundle bundle=new Bundle();
+            bundle.putDouble("com.example.cgallen.hellomap.laitude",latitude);
+            bundle.putDouble("com.example.cgallen.hellomap.longitude",longitude);
+            bundle.putInt("com.example.cgallen.hellomap.zoom",zoom);
+            requestIntent.putExtras(bundle);
+
+            startActivityForResult(requestIntent,1);
             return true;
         }
         return false;
@@ -104,5 +104,5 @@ public class HelloMap extends Activity {
             }
         }
     }
-    
+
 }

@@ -14,6 +14,10 @@ import android.app.Activity;
 
 public class ChooseLocationActivity extends Activity implements OnClickListener {
 
+    private Double latitude = Constants.DEFAULT_LON;
+    private Double longitude = Constants.DEFAULT_LAT;
+    private Integer zoom = Constants.DEFAULT_ZOOM;
+
         /** Called when the activity is first created. */
         @Override
         public void onCreate(Bundle savedInstanceState)
@@ -22,11 +26,16 @@ public class ChooseLocationActivity extends Activity implements OnClickListener 
 
             setContentView(R.layout.activity_choose_location);
 
+            Bundle extras = this.getIntent().getExtras();
+            latitude =extras.getDouble("com.example.cgallen.hellomap.laitude");
+            longitude =extras.getDouble("com.example.cgallen.hellomap.longitude");
+            zoom = extras.getInt("com.example.cgallen.hellomap.zoom");
+
             // set default values lat lon
             EditText lonEditText = (EditText) findViewById(R.id.longitude);
-            lonEditText.setText(Constants.DEFAULT_LON.toString());
+            lonEditText.setText(longitude.toString());
             EditText latEditText = (EditText) findViewById(R.id.latitude);
-            latEditText.setText(Constants.DEFAULT_LAT.toString());
+            latEditText.setText(latitude.toString());
 
             Button c = (Button)findViewById(R.id.btn1);
             c.setOnClickListener(this);
@@ -34,7 +43,6 @@ public class ChooseLocationActivity extends Activity implements OnClickListener 
             d.setOnClickListener(this);
 
         }
-
 
         // lat +90 to -90
         private Double parseLat(EditText geoEditText){
@@ -114,9 +122,11 @@ public class ChooseLocationActivity extends Activity implements OnClickListener 
             Double  lat = parseLat(latEditText);
             if(lon!=null && lat!=null){
                 // return result if successfull
+                latitude = lat;
+                longitude = lon;
                 bundle.putDouble("com.example.cgallen.hellomap.laitude",latitude);
                 bundle.putDouble("com.example.cgallen.hellomap.longitude",longitude);
-                bundle.putDouble("com.example.cgallen.hellomap.zoom",zoom);
+                bundle.putInt("com.example.cgallen.hellomap.zoom",zoom);
                 intent.putExtras(bundle);
                 setResult(RESULT_OK,intent);
                 finish(); // closes the Activity
