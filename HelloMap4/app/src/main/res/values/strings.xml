@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">HelloMap</string>
+    <string name="button1">GO!</string>
+    <string name="button2">Reset</string>
+    <string name="latitude">latitude</string>
+    <string name="longitude">longitude</string>
+    <string name="choosemap">choose map</string>
+    <string name="regularview">regular view</string>
+    <string name="cyclemapview">cycle map view</string>
+    <string name="selectmap">Select Map</string>
+    <string name="chooseLocation">Set Location</string>
+</resources>
