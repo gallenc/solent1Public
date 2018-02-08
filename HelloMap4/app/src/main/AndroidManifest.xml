@@ -26,8 +26,8 @@
         </activity>
 
         <activity android:name=".MapChooseActivity" android:label="@string/selectmap" />
-
         <activity android:name=".ChooseLocationActivity" android:label="@string/chooseLocation" />
+        <activity android:name=".MyPrefsActivity" android:label="@string/setdefaults" />
     </application>
 
 

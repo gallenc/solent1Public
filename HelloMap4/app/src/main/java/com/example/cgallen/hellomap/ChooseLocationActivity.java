@@ -1,6 +1,8 @@
 package com.example.cgallen.hellomap;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -95,7 +97,7 @@ public class ChooseLocationActivity extends Activity implements OnClickListener 
         @Override
         public void onClick(View view) {
 
-            // create bundle and intent to store result of inputing values in thsi layout
+            // create bundle and intent to store result of inputing values in this layout
             Intent intent = new Intent();
             Bundle bundle=new Bundle();
 
@@ -110,8 +112,16 @@ public class ChooseLocationActivity extends Activity implements OnClickListener 
                 case R.id.btn1: // ok - just continue
                     break;
                 case R.id.btn2: // reset default
-                    lonEditText.setText(Constants.DEFAULT_LON.toString());
-                    latEditText.setText(Constants.DEFAULT_LAT.toString());
+
+                    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                    String defaultLat =  prefs.getString("lat", Constants.DEFAULT_LAT.toString());
+                    String defaultLon = prefs.getString("lon", Constants.DEFAULT_LON.toString());
+
+                    lonEditText.setText(defaultLon);
+                    latEditText.setText(defaultLat);
+
+                    String defaultZoom = prefs.getString("zoom", Constants.DEFAULT_ZOOM.toString());
+                    zoom = Integer.parseInt(defaultZoom);
                     break;
                 default:
                     break;
@@ -121,7 +131,7 @@ public class ChooseLocationActivity extends Activity implements OnClickListener 
             Double  lon = parseLat(lonEditText);
             Double  lat = parseLat(latEditText);
             if(lon!=null && lat!=null){
-                // return result if successfull
+                // return result if successful
                 latitude = lat;
                 longitude = lon;
                 bundle.putDouble("com.example.cgallen.hellomap.laitude",latitude);

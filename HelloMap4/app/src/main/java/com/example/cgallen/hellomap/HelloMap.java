@@ -1,5 +1,6 @@
 package com.example.cgallen.hellomap;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -26,13 +27,13 @@ public class HelloMap extends Activity {
     Double latitude = Constants.DEFAULT_LAT;
     Double longitude = Constants.DEFAULT_LON;
     Integer zoom = Constants.DEFAULT_ZOOM;
+    String defaultMapCode = "";
 
     MapView mv;
 
     /** Called when the activity is first created. */
     @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // This line sets the user agent, a requirement to download OSM maps
@@ -44,6 +45,36 @@ public class HelloMap extends Activity {
 
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        // do something with the preference data...
+        latitude = Double.parseDouble ( prefs.getString("lat", Constants.DEFAULT_LAT.toString()) );
+        longitude = Double.parseDouble ( prefs.getString("lon", Constants.DEFAULT_LON.toString()) );
+        zoom = Integer.parseInt( prefs.getString("zoom", Constants.DEFAULT_ZOOM.toString()) );
+        defaultMapCode = prefs.getString("mapPref", Constants.DEFAULT_MAP);
+
+    }
+
+    @Override
+    public void onDestroy()  {
+        super.onDestroy();
+        boolean isRecording = true;
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putBoolean ("isRecording", isRecording);
+        editor.commit();
+    }
+
+    @Override
+    public void onSaveInstanceState (Bundle savedInstanceState)  {
+        boolean isRecording = true;
+        savedInstanceState.putBoolean("isRecording", isRecording);
+    }
+
+
+
     private void centerMap(){
         mv = (MapView)findViewById(R.id.map1);
         mv.setBuiltInZoomControls(true);
@@ -51,21 +82,24 @@ public class HelloMap extends Activity {
         mv.getController().setCenter(new GeoPoint(latitude, longitude));
     }
 
+    @Override
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater=getMenuInflater();
         inflater.inflate(R.menu.menu_hello_map, menu);
         return true;
     }
 
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
         if(item.getItemId() == R.id.choosemap) {
-            // react to the menu item being selected...
+            // open choose map menu activity
             Intent intent = new Intent(this,MapChooseActivity.class);
             startActivityForResult(intent,0);
             // startActivity(intent);
             return true;
         } else  if(item.getItemId() == R.id.setlocation) {
-            // react to the menu item being selected...
+            // open choose set location menu activity
             Intent requestIntent = new Intent(this,ChooseLocationActivity.class);
             Bundle bundle=new Bundle();
             bundle.putDouble("com.example.cgallen.hellomap.laitude",latitude);
@@ -75,10 +109,16 @@ public class HelloMap extends Activity {
 
             startActivityForResult(requestIntent,1);
             return true;
+        } else  if(item.getItemId() == R.id.setDefaults) {
+            // start set defaults activity
+            Intent requestIntent = new Intent(this,MyPrefsActivity.class);
+            startActivityForResult(requestIntent,2);
+            return true;
         }
         return false;
     }
 
+    @Override
     protected void onActivityResult(int requestCode,int resultCode,Intent intent) {
         if(requestCode==0){
             // result from choose map
