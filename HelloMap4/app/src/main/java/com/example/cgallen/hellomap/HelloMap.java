@@ -13,6 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.content.Intent;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
+import android.widget.TextView;
 
 import android.app.Activity;
 
@@ -25,6 +26,7 @@ public class HelloMap extends Activity {
     String mapCode = Constants.DEFAULT_MAP;
 
     MapView mv;
+    private TextView tvlat;
 
     /** Called when the activity is first created. */
     @Override
@@ -76,16 +78,26 @@ public class HelloMap extends Activity {
 
 
     private void centerMap(){
+
+        TextView tvlat = (TextView)findViewById(R.id.tvlat);
+        tvlat.setText(latitude.toString());
+        TextView tvlon = (TextView)findViewById(R.id.tvlon);
+        tvlon.setText(longitude.toString());
+
+        TextView tvmap = (TextView)findViewById(R.id.tvmap);
+
+
         mv = (MapView)findViewById(R.id.map1);
         mv.setBuiltInZoomControls(true);
         mv.getController().setZoom(zoom);
         mv.getController().setCenter(new GeoPoint(latitude, longitude));
-
         if (Constants.CYCLE_MAP.equals(mapCode)){
             mv.setTileSource(TileSourceFactory.HIKEBIKEMAP);
+            tvmap.setText("Cycle Map");
         }
         else {
             mv.setTileSource(TileSourceFactory.MAPNIK);
+            tvmap.setText("Default Map");
         }
     }
 
