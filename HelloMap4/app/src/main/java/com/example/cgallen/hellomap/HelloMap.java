@@ -1,14 +1,9 @@
 package com.example.cgallen.hellomap;
 
+import android.app.AlertDialog;
 import android.content.SharedPreferences;
-import android.support.v7.app.AlertDialog;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.widget.Button;
-import android.widget.EditText;
 
 import org.osmdroid.config.Configuration;
 import org.osmdroid.util.GeoPoint;
@@ -27,7 +22,7 @@ public class HelloMap extends Activity {
     Double latitude = Constants.DEFAULT_LAT;
     Double longitude = Constants.DEFAULT_LON;
     Integer zoom = Constants.DEFAULT_ZOOM;
-    String defaultMapCode = "";
+    String mapCode = Constants.DEFAULT_MAP;
 
     MapView mv;
 
@@ -40,9 +35,6 @@ public class HelloMap extends Activity {
         Configuration.getInstance().load(this, PreferenceManager.getDefaultSharedPreferences(this));
 
         setContentView(R.layout.activity_hello_map);
-
-        centerMap();
-
     }
 
     @Override
@@ -50,11 +42,19 @@ public class HelloMap extends Activity {
         super.onStart();
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         // do something with the preference data...
-        latitude = Double.parseDouble ( prefs.getString("lat", Constants.DEFAULT_LAT.toString()) );
-        longitude = Double.parseDouble ( prefs.getString("lon", Constants.DEFAULT_LON.toString()) );
-        zoom = Integer.parseInt( prefs.getString("zoom", Constants.DEFAULT_ZOOM.toString()) );
-        defaultMapCode = prefs.getString("mapPref", Constants.DEFAULT_MAP);
+        try {
+            latitude = Double.parseDouble(prefs.getString("lat", Constants.DEFAULT_LAT.toString()));
+            longitude = Double.parseDouble(prefs.getString("lon", Constants.DEFAULT_LON.toString()));
+            zoom = Integer.parseInt(prefs.getString("zoom", Constants.DEFAULT_ZOOM.toString()));
+        } catch (Exception ex){
+            popupMessage("invalid default preferenced entry: "+ex.getMessage());
+        }
+        mapCode = prefs.getString("mapPref", Constants.DEFAULT_MAP);
+        centerMap();
+    }
 
+    private void popupMessage(String message){
+        new AlertDialog.Builder(this).setPositiveButton("OK",null).setMessage(message).show();
     }
 
     @Override
@@ -80,6 +80,13 @@ public class HelloMap extends Activity {
         mv.setBuiltInZoomControls(true);
         mv.getController().setZoom(zoom);
         mv.getController().setCenter(new GeoPoint(latitude, longitude));
+
+        if (Constants.CYCLE_MAP.equals(mapCode)){
+            mv.setTileSource(TileSourceFactory.HIKEBIKEMAP);
+        }
+        else {
+            mv.setTileSource(TileSourceFactory.MAPNIK);
+        }
     }
 
     @Override
