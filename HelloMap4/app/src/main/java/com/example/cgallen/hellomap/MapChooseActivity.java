@@ -22,11 +22,11 @@ public class MapChooseActivity extends Activity implements OnClickListener {
     public void onClick(View v) {
         Intent intent = new Intent();
         Bundle bundle=new Bundle();
-        boolean cyclemap=false;
+        String cyclemap =  Constants.DEFAULT_MAP;
         if (v.getId()==R.id.btnCyclemap) {
-            cyclemap=true;
+            cyclemap=Constants.CYCLE_MAP;
         }
-        bundle.putBoolean("com.example.cyclemap",cyclemap);
+        bundle.putString("com.example.mapcode",cyclemap);
         intent.putExtras(bundle);
         setResult(RESULT_OK,intent);
         finish();

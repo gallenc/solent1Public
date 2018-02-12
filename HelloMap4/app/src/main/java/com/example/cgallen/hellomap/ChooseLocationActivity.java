@@ -29,7 +29,7 @@ public class ChooseLocationActivity extends Activity implements OnClickListener 
             setContentView(R.layout.activity_choose_location);
 
             Bundle extras = this.getIntent().getExtras();
-            latitude =extras.getDouble("com.example.cgallen.hellomap.laitude");
+            latitude =extras.getDouble("com.example.cgallen.hellomap.latitude");
             longitude =extras.getDouble("com.example.cgallen.hellomap.longitude");
             zoom = extras.getInt("com.example.cgallen.hellomap.zoom");
 
@@ -46,53 +46,6 @@ public class ChooseLocationActivity extends Activity implements OnClickListener 
 
         }
 
-        // lat +90 to -90
-        private Double parseLat(EditText geoEditText){
-            String input = geoEditText.getText().toString();
-            try{
-                Double latitude=Double.parseDouble(input);
-                if(latitude>90 || latitude <-90) {
-                    geoEditText.setText("");
-                    geoEditText.setHint("invalid latitude: "+input);
-                    String message="invalid latitude";
-                    popupMessage(message);
-                    return null;
-                }
-                return latitude;
-            } catch (Exception e){
-                geoEditText.setText("");
-                geoEditText.setHint("invalid latitude: "+input);
-                String message="invalid latitude: "+input;
-                popupMessage(message);
-                return null;
-            }
-        }
-
-        private void popupMessage(String message){
-            new AlertDialog.Builder(this).setPositiveButton("OK",null).setMessage(message).show();
-        }
-
-        //  long +180 to -180
-        private Double  parseLong(EditText geoEditText){
-            String input = geoEditText.getText().toString();
-            try{
-                Double  longitude=Double.parseDouble(input);
-                if(longitude>180 || longitude <-180) {
-                    geoEditText.setText("");
-                    geoEditText.setHint("invalid longitude: "+input);
-                    String message="invalid logitude: "+input;
-                    popupMessage(message);
-                    return null;
-                }
-                return longitude;
-            } catch (Exception e){
-                geoEditText.setText("");
-                geoEditText.setHint("invalid longitude: "+input);
-                String message="invalid longitude: "+input;
-                popupMessage(message);
-                return null;
-            }
-        }
 
         @Override
         public void onClick(View view) {
@@ -101,9 +54,9 @@ public class ChooseLocationActivity extends Activity implements OnClickListener 
             Intent intent = new Intent();
             Bundle bundle=new Bundle();
 
-            Double latitude = Constants.DEFAULT_LAT;
-            Double longitude = Constants.DEFAULT_LON;
-            Integer zoom = Constants.DEFAULT_ZOOM;
+            //Double latitude = Constants.DEFAULT_LAT;
+            //Double longitude = Constants.DEFAULT_LON;
+           // Integer zoom = Constants.DEFAULT_ZOOM;
 
             EditText lonEditText = (EditText) findViewById(R.id.longitude);
             EditText latEditText = (EditText) findViewById(R.id.latitude);
@@ -134,14 +87,61 @@ public class ChooseLocationActivity extends Activity implements OnClickListener 
                 // return result if successful
                 latitude = lat;
                 longitude = lon;
-                bundle.putDouble("com.example.cgallen.hellomap.laitude",latitude);
+                bundle.putDouble("com.example.cgallen.hellomap.latitude",latitude);
                 bundle.putDouble("com.example.cgallen.hellomap.longitude",longitude);
                 bundle.putInt("com.example.cgallen.hellomap.zoom",zoom);
                 intent.putExtras(bundle);
                 setResult(RESULT_OK,intent);
                 finish(); // closes the Activity
             }
-
         }
+
+    // lat +90 to -90
+    private Double parseLat(EditText geoEditText){
+        String input = geoEditText.getText().toString();
+        try{
+            Double latitude=Double.parseDouble(input);
+            if(latitude>90 || latitude <-90) {
+                geoEditText.setText("");
+                geoEditText.setHint("invalid latitude: "+input);
+                String message="invalid latitude";
+                popupMessage(message);
+                return null;
+            }
+            return latitude;
+        } catch (Exception e){
+            geoEditText.setText("");
+            geoEditText.setHint("invalid latitude: "+input);
+            String message="invalid latitude: "+input;
+            popupMessage(message);
+            return null;
+        }
+    }
+
+    //  long +180 to -180
+    private Double  parseLong(EditText geoEditText){
+        String input = geoEditText.getText().toString();
+        try{
+            Double  longitude=Double.parseDouble(input);
+            if(longitude>180 || longitude <-180) {
+                geoEditText.setText("");
+                geoEditText.setHint("invalid longitude: "+input);
+                String message="invalid logitude: "+input;
+                popupMessage(message);
+                return null;
+            }
+            return longitude;
+        } catch (Exception e){
+            geoEditText.setText("");
+            geoEditText.setHint("invalid longitude: "+input);
+            String message="invalid longitude: "+input;
+            popupMessage(message);
+            return null;
+        }
+    }
+
+    private void popupMessage(String message){
+        new AlertDialog.Builder(this).setPositiveButton("OK",null).setMessage(message).show();
+    }
     }
 
