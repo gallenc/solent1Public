@@ -1,0 +1,6 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/setlocation" android:title="@string/changeLocation"/>
+    <item android:id="@+id/choosemap" android:title="@string/choosemap"/>
+    <item android:id="@+id/setDefaults" android:title="@string/setdefaults"/>
+</menu>
