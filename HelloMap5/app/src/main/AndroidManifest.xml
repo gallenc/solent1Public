@@ -28,8 +28,9 @@
         <activity android:name=".MapChooseActivity" android:label="@string/selectmap" />
         <activity android:name=".ChooseLocationActivity" android:label="@string/chooseLocation" />
         <activity android:name=".MyPrefsActivity" android:label="@string/setdefaults" />
+        <activity android:name=".ChooseMapListActivity" android:label="@string/selectmap2" />
+        <activity android:name=".ExampleListActivity1" android:label="@string/listActivity1" />
+        <activity android:name=".ExampleListActivity2" android:label="@string/listActivity2" />
     </application>
-
-
 
 </manifest>

@@ -8,11 +8,14 @@ import android.preference.PreferenceManager;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
+
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.content.Intent;
+
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
+
 import android.widget.TextView;
 
 import android.app.Activity;
@@ -28,18 +31,20 @@ public class HelloMap extends Activity {
 
     MapView mv;
 
-    /** Called when the activity is first created. */
+    /**
+     * Called when the activity is first created.
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // load last used mapCode if available
         if (savedInstanceState != null) {
-            mapCode = savedInstanceState.getString ("com.example.mapcode");
+            mapCode = savedInstanceState.getString("com.example.mapcode");
         }
 
         // load preferred map code if no last used mapcode
-        if(mapCode==null) {
+        if (mapCode == null) {
             SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             mapCode = prefs.getString("mapPref", Constants.DEFAULT_MAP);
         }
@@ -55,8 +60,8 @@ public class HelloMap extends Activity {
             latitude = Double.parseDouble(prefs.getString("lat", Constants.DEFAULT_LAT.toString()));
             longitude = Double.parseDouble(prefs.getString("lon", Constants.DEFAULT_LON.toString()));
             zoom = Integer.parseInt(prefs.getString("zoom", Constants.DEFAULT_ZOOM.toString()));
-        } catch (Exception ex){
-            popupMessage("invalid default preferenced entry: "+ex.getMessage());
+        } catch (Exception ex) {
+            popupMessage("invalid default preferenced entry: " + ex.getMessage());
         }
     }
 
@@ -67,24 +72,24 @@ public class HelloMap extends Activity {
     }
 
     @Override
-    public void onDestroy()  {
+    public void onDestroy() {
         super.onDestroy();
         // save the chosen map
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         SharedPreferences.Editor editor = prefs.edit();
-        editor.putString ("com.example.mapcode", mapCode);
+        editor.putString("com.example.mapcode", mapCode);
         editor.commit();
     }
 
     @Override
-    public void onSaveInstanceState (Bundle savedInstanceState)  {
-        savedInstanceState.putString ("com.example.mapcode", mapCode);
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putString("com.example.mapcode", mapCode);
     }
 
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        MenuInflater inflater=getMenuInflater();
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_hello_map, menu);
         return true;
     }
@@ -92,57 +97,65 @@ public class HelloMap extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        if(item.getItemId() == R.id.choosemap) {
+        if (item.getItemId() == R.id.choosemap) {
             // open choose map menu activity
-            Intent intent = new Intent(this,MapChooseActivity.class);
-            startActivityForResult(intent,0);
+            Intent intent = new Intent(this, MapChooseActivity.class);
+            startActivityForResult(intent, 0);
             // startActivity(intent);
             return true;
-        } else  if(item.getItemId() == R.id.setlocation) {
+        } else if (item.getItemId() == R.id.setlocation) {
             // open choose set location menu activity
-            Intent requestIntent = new Intent(this,ChooseLocationActivity.class);
-            Bundle bundle=new Bundle();
-            bundle.putDouble("com.example.cgallen.hellomap.latitude",latitude);
-            bundle.putDouble("com.example.cgallen.hellomap.longitude",longitude);
-            bundle.putInt("com.example.cgallen.hellomap.zoom",zoom);
+            Intent requestIntent = new Intent(this, ChooseLocationActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putDouble("com.example.cgallen.hellomap.latitude", latitude);
+            bundle.putDouble("com.example.cgallen.hellomap.longitude", longitude);
+            bundle.putInt("com.example.cgallen.hellomap.zoom", zoom);
             requestIntent.putExtras(bundle);
 
-            startActivityForResult(requestIntent,1);
+            startActivityForResult(requestIntent, 1);
             return true;
-        } else  if(item.getItemId() == R.id.setDefaults) {
+        } else if (item.getItemId() == R.id.setDefaults) {
             // start set defaults activity
-            Intent requestIntent = new Intent(this,MyPrefsActivity.class);
-            startActivityForResult(requestIntent,2);
+            Intent requestIntent = new Intent(this, MyPrefsActivity.class);
+            startActivityForResult(requestIntent, 2);
             return true;
+        } else if (item.getItemId() == R.id.selectMap2) {
+            Intent requestIntent = new Intent(this, ChooseMapListActivity.class);
+            startActivityForResult(requestIntent, 0); // same request code as ChooseLocationActivity
+        } else if (item.getItemId() == R.id.listActivity1) {
+            Intent requestIntent = new Intent(this, ExampleListActivity1.class);
+            startActivityForResult(requestIntent, 3);
+        } else if (item.getItemId() == R.id.listActivity2) {
+            Intent requestIntent = new Intent(this, ExampleListActivity2.class);
+            startActivityForResult(requestIntent, 3);
         }
         return false;
     }
 
     @Override
-    protected void onActivityResult(int requestCode,int resultCode,Intent intent) {
-        if(requestCode==0){
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        if (requestCode == 0) {
             // result from choose map
-            if (resultCode==RESULT_OK) {
-                Bundle extras=intent.getExtras();
+            if (resultCode == RESULT_OK) {
+                Bundle extras = intent.getExtras();
                 mapCode = extras.getString("com.example.mapcode");
-                if(Constants.CYCLE_MAP.equals(mapCode)) {
+                if (Constants.CYCLE_MAP.equals(mapCode)) {
                     mv.setTileSource(TileSourceFactory.HIKEBIKEMAP);
-                }
-                else {
+                } else {
                     mv.setTileSource(TileSourceFactory.MAPNIK);
                 }
             }
 
-        } else  if(requestCode==1){
+        } else if (requestCode == 1) {
             // result from choose location activity
-            if (resultCode==RESULT_OK) {
-                Bundle extras=intent.getExtras();
-                latitude =extras.getDouble("com.example.cgallen.hellomap.latitude");
-                longitude =extras.getDouble("com.example.cgallen.hellomap.longitude");
+            if (resultCode == RESULT_OK) {
+                Bundle extras = intent.getExtras();
+                latitude = extras.getDouble("com.example.cgallen.hellomap.latitude");
+                longitude = extras.getDouble("com.example.cgallen.hellomap.longitude");
                 zoom = extras.getInt("com.example.cgallen.hellomap.zoom");
                 centerMap();
             }
-        } else  if(requestCode==2){
+        } else if (requestCode == 2) {
             // result from set preferences activity
             // test results and relaunch if incorrect
             SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
@@ -155,49 +168,48 @@ public class HelloMap extends Activity {
                 zom = Integer.parseInt(prefs.getString("zoom", Constants.DEFAULT_ZOOM.toString()));
 
                 // validate preferenc values
-                if(lat<-180 || lat > 180) throw new RuntimeException("invalid latitude:"+lat);
-                if (lon<-90 || lon >90) throw new RuntimeException("invalid longitude:"+lon);
-                if (zom <1) throw new RuntimeException("invalid zoom:"+zom);
-                latitude =lat;
+                if (lat < -180 || lat > 180) throw new RuntimeException("invalid latitude:" + lat);
+                if (lon < -90 || lon > 90) throw new RuntimeException("invalid longitude:" + lon);
+                if (zom < 1) throw new RuntimeException("invalid zoom:" + zom);
+                latitude = lat;
                 longitude = lon;
                 zoom = zom;
-            } catch (Exception ex){
+            } catch (Exception ex) {
                 // start set defaults activity
-                Intent requestIntent = new Intent(this,MyPrefsActivity.class);
-                startActivityForResult(requestIntent,2);
+                Intent requestIntent = new Intent(this, MyPrefsActivity.class);
+                startActivityForResult(requestIntent, 2);
                 // the toast will display message when the new actitiy is launched
                 Toast.makeText(getApplicationContext(),
-                        "invalid default preference entry click to renter preference: "+ex.getMessage(),
+                        "invalid default preference entry click to renter preference: " + ex.getMessage(),
                         Toast.LENGTH_LONG).show();
             }
         }
     }
 
 
-    private void centerMap(){
+    private void centerMap() {
 
-        TextView tvlat = (TextView)findViewById(R.id.tvlat);
+        TextView tvlat = (TextView) findViewById(R.id.tvlat);
         tvlat.setText(latitude.toString());
-        TextView tvlon = (TextView)findViewById(R.id.tvlon);
+        TextView tvlon = (TextView) findViewById(R.id.tvlon);
         tvlon.setText(longitude.toString());
 
-        TextView tvmap = (TextView)findViewById(R.id.tvmap);
+        TextView tvmap = (TextView) findViewById(R.id.tvmap);
 
-        mv = (MapView)findViewById(R.id.map1);
+        mv = (MapView) findViewById(R.id.map1);
         mv.setBuiltInZoomControls(true);
         mv.getController().setZoom(zoom);
         mv.getController().setCenter(new GeoPoint(latitude, longitude));
-        if (Constants.CYCLE_MAP.equals(mapCode)){
+        if (Constants.CYCLE_MAP.equals(mapCode)) {
             mv.setTileSource(TileSourceFactory.HIKEBIKEMAP);
             tvmap.setText("Cycle Map");
-        }
-        else {
+        } else {
             mv.setTileSource(TileSourceFactory.MAPNIK);
             tvmap.setText("Regular View");
         }
     }
 
-    private void popupMessage(String message){
+    private void popupMessage(String message) {
         new AlertDialog.Builder(this).setPositiveButton("OK", null).setMessage(message).show();
     }
 
