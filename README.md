@@ -1,16 +1,23 @@
 
 
 
+
+
 # solent1Public
 Miscellaneous solent work
 http://www.free-map.org.uk/course
 
 username dfti2018 (password seperate)
 
+## Android Studio Tips
+1. Import settings
+
 When you start up Studio and it asks to import settings, the students should enter this path for the settings.
 C:\Android2.3.3\.AndroidStudio2.3
 This will avoid that annoying behaviour where it downloads the SDK, even though the SDK is already installed.
 Once this is done, the SDK path should be set automatically (students will not need to do it themselves) but in case of problems, students should ensure that the SDK path (in the settings) is C:\Android2.3.3\SDK
+
+2. to view logcat ( android logs) use Alt 6
 
 # GIT
 http://www.free-map.org.uk/course/mad/git_cheat_sheet.docx)
