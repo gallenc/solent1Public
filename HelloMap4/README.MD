@@ -1,5 +1,7 @@
 ## My implimentation of Preferences Exercise
 
+http://www.free-map.org.uk/course//mad/part5.php
+
 The idea of this exercise is to develop a version of your mapping app which uses preferences, rather than a custom activity. Add an extra menu item to launch the preferences, and add a PreferenceActivity which includes the following:
 
 Current Latitude and Longitude of the map (EditTextPreference; incorporate the code provided above)
