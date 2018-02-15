@@ -1,5 +1,6 @@
 
 
+
 # solent1Public
 Miscellaneous solent work
 http://www.free-map.org.uk/course
@@ -62,6 +63,13 @@ installing new library
 centering map on coordinates
 
 
+## Preferences exercise
+http://www.free-map.org.uk/course//mad/part5.php 
+Mobile Application Development - Part 5
+Persistence I - Preferences
+See https://github.com/gallenc/solent1Public/tree/master/HelloMap4 HelloMap4
 
-
-
+## Lists exercise
+http://www.free-map.org.uk/course//mad/part6.php 
+Mobile Application Development - Part 6Lists
+see https://github.com/gallenc/solent1Public/tree/master/HelloMap5 HelloMap5
