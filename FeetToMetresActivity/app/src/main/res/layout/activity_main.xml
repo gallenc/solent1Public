@@ -13,8 +13,11 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"/>
 
+        <!-- to get keyboard either add android:hint="enter value" -->
+        <!-- or android:layout_width="fill_parent" -->
+
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/et1"
             android:layout_toRightOf="@id/tv2"

@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FeetToMetresActivity.iml" filepath="$PROJECT_DIR$/FeetToMetresActivity.iml" />
+      <module fileurl="file://C:\devel\gitrepos\solent1Public\FeetToMetresActivity\FeetToMetresActivity.iml" filepath="C:\devel\gitrepos\solent1Public\FeetToMetresActivity\FeetToMetresActivity.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\devel\gitrepos\solent1Public\FeetToMetresActivity\app\app.iml" filepath="C:\devel\gitrepos\solent1Public\FeetToMetresActivity\app\app.iml" />
     </modules>
   </component>
 </project>

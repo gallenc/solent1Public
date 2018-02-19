@@ -7,6 +7,8 @@ import android.view.View.OnClickListener;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.EditText;
+import android.support.v7.app.AlertDialog;
+
 
 
 public class FeetToMetresActivity extends AppCompatActivity implements OnClickListener {
@@ -23,8 +25,17 @@ public class FeetToMetresActivity extends AppCompatActivity implements OnClickLi
     {
         TextView tv = (TextView)findViewById(R.id.tv1);
         EditText et = (EditText)findViewById(R.id.et1);
-        double feet = Double.parseDouble(et.getText().toString());
-        double metres = feet*0.305;
-        tv.setText("In metres that is: " + metres);
+        Double feet=null;
+        Double metres=null;
+        String feetStr=et.getText().toString();
+        try {
+            feet = Double.parseDouble(feetStr);
+            metres = feet*0.305;
+            tv.setText("In metres that is: " + metres);
+        } catch (NumberFormatException | NullPointerException ex ){
+            new AlertDialog.Builder(this).setPositiveButton("OK",null).setMessage("cannot convert" +
+                    feetStr+ " to a Double value ").show();
+        }
+
     }
 }
