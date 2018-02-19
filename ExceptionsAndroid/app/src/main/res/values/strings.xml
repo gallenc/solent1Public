@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">ExceptionsAndroid</string>
+    <string name="app_name">Exceptions Android</string>
+    <string name="tvhrs">Hours</string>
+    <string name="tvsecs">Seconds</string>
+    <string name="tvmins">Minutes</string>
+    <string name="btn1">Enter Time</string>
+    <string name="timeResult">Time Entered:</string>
 </resources>
