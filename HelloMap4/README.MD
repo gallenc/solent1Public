@@ -1,6 +1,9 @@
-## My implimentation of Preferences Exercise
+## Mobile Application Development - Part 5Persistence I - Preferences
 
 http://www.free-map.org.uk/course//mad/part5.php
+
+## My implimentation of Preferences Exercise
+
 
 The idea of this exercise is to develop a version of your mapping app which uses preferences, rather than a custom activity. Add an extra menu item to launch the preferences, and add a PreferenceActivity which includes the following:
 
