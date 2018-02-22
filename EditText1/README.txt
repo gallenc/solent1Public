@@ -4,6 +4,9 @@ http://www.free-map.org.uk/course//mad/part8.php
 
 Exercise
 
+NOTE  in gradel file setting target greater then 22 will stop file permissions from working
+        targetSdkVersion 22
+
 Write a simple text-editor/notepad app with Android. 
 
 The main activity should consist of a single EditText occupying the whole of the screen. 
