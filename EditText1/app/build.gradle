@@ -5,7 +5,8 @@ android {
     defaultConfig {
         applicationId "com.example.gallenc.edittext1"
         minSdkVersion 19
-        targetSdkVersion 26
+        // setting target greater then 22 will stop file permissions from working
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
