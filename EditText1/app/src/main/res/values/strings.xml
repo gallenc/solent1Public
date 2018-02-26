@@ -5,4 +5,5 @@
     <string name="loadmenutext">Load Text File</string>
     <string name="savemenutext">Save Text File</string>
     <string name="preferences">Preferences</string>
+    <string name="quit">Exit Application</string>
 </resources>

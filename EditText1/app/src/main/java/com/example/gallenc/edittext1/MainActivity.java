@@ -1,24 +1,24 @@
 package com.example.gallenc.edittext1;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Environment;
+import android.preference.PreferenceManager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.app.AlertDialog;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.widget.EditText;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
-import java.io.PrintWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.File;
-
-import android.os.Environment;
+import java.io.PrintWriter;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -47,11 +47,52 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    public void tryEndApplication() {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
+        // set the title of the Alert Dialog
+        alertDialogBuilder.setTitle("Exit Application");
+
+        // set dialog message
+        alertDialogBuilder
+                .setMessage("do you want to exit application now?")
+                .setCancelable(false)
+                .setPositiveButton("Exit Now",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,
+                                                int id) {
+                                // what to do if YES is tapped
+                                finishAffinity();
+                                System.exit(0);
+                            }
+                        })
+                .setNeutralButton("CANCEL",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,
+                                                int id) {
+                                // code to do on CANCEL tapped
+                                dialog.cancel();
+                            }
+                        })
+
+                .setNegativeButton("Do not Exit",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,
+                                                int id) {
+                                // code to do on NO tapped
+                                dialog.cancel();
+                            }
+                        });
+
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+    }
+
     public boolean onOptionsItemSelected(MenuItem item) {
-        EditText textPanel = (EditText)findViewById(R.id.et1);
+        EditText textPanel = (EditText) findViewById(R.id.et1);
 
         if (item.getItemId() == R.id.loadmenutext) {
-            String text =  loadText();
+            String text = loadText();
             textPanel.setText(text);
             return true;
         } else if (item.getItemId() == R.id.savemenutext) {
@@ -59,7 +100,11 @@ public class MainActivity extends AppCompatActivity {
             saveText(text);
             return true;
         } else if (item.getItemId() == R.id.preferences) {
-            popupMessage("preferences not implimented yet");
+            Intent requestIntent = new Intent(this,PreferencesActivity.class);
+            startActivityForResult(requestIntent,0);
+            return true;
+        } else if (item.getItemId() == R.id.quit) {
+            tryEndApplication();
             return true;
         }
         return false;
@@ -75,8 +120,8 @@ public class MainActivity extends AppCompatActivity {
         FileReader fileReader = null;
         try {
             File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + fileName);
-            if(! file.exists()){
-                popupMessage("file does not exist: "+file.getAbsolutePath());
+            if (!file.exists()) {
+                popupMessage("file does not exist: " + file.getAbsolutePath());
             } else {
                 fileReader = new FileReader(file);
                 bufferedReader = new BufferedReader(fileReader);
@@ -92,7 +137,8 @@ public class MainActivity extends AppCompatActivity {
             try {
                 if (bufferedReader != null) bufferedReader.close();
                 if (fileReader != null) fileReader.close();
-            } catch (IOException ex) { }
+            } catch (IOException ex) {
+            }
         }
         return stringBuffer.toString();
     }
