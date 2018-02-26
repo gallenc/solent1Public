@@ -4,15 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
+<!-- first name last name phone number address -->
+    <ListView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/nameslist"/>
 
-    <EditText
-        android:gravity="top"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/et1"
-        android:inputType="textCapSentences|textAutoCorrect|textMultiLine"
-        android:textSize="12pt"
-        android:hint="@string/editPrompt"
-        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addcontact"
+        android:id="@+id/btnaddcontact" />
 
 </LinearLayout>

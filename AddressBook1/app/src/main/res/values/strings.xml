@@ -1,9 +1,17 @@
 <resources>
-    <string name="app_name">EditText1</string>
-    <string name="editPrompt">Edit Text Here</string>
+    <string name="app_name">Address Book 1</string>
+    <string name="editPrompt">enter address</string>
     <string name="prefFileNameDescription">Name of file where this application loads and saves text</string>
     <string name="loadmenutext">Load Text File</string>
     <string name="savemenutext">Save Text File</string>
     <string name="preferences">Preferences</string>
     <string name="quit">Exit Application</string>
+
+    <string name="tvfname">First Name</string>
+    <string name="tvsname">Second Name</string>
+    <string name="tvphone">Phone Number</string>
+    <string name="addeditcontact">Add or Edit Contact</string>
+    <string name="deletecontact">Delete Contact</string>
+    <string name="addcontact">Add Contact</string>
+    <string name="addressEntry">Address Entry</string>
 </resources>

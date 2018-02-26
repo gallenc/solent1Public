@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/EditText1.iml" filepath="$PROJECT_DIR$/EditText1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AddressBook1.iml" filepath="$PROJECT_DIR$/AddressBook1.iml" />
+      <module fileurl="file://C:\devel\gitrepos\solent1Public\AddressBook1\EditText1.iml" filepath="C:\devel\gitrepos\solent1Public\AddressBook1\EditText1.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
