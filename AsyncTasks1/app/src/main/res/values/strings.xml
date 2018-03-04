@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AsyncTasks1</string>
+    <string name="editPrompt">Edit Text Here</string>
+    <string name="goButton">Go</string>
+</resources>
