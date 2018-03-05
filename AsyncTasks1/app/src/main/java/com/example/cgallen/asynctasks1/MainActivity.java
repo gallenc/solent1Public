@@ -5,6 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 
+import com.example.cgallen.asynctasks1.R;
+import com.example.cgallen.examples.TestTask;
+import com.example.cgallen.examples.TestTask2;
+
 public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     @Override

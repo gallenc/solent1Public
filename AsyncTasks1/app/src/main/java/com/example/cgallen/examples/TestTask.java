@@ -1,4 +1,4 @@
-package com.example.cgallen.asynctasks1;
+package com.example.cgallen.examples;
 
 import android.os.AsyncTask;
 
@@ -10,21 +10,20 @@ import android.content.Context;
 import android.app.AlertDialog;
 import android.os.Environment;
 
-public class TestTask2 extends AsyncTask<String, Void, String> {
+public class TestTask extends AsyncTask<Void, Void, String> {
 
     Context parent;
 
-    public TestTask2(Context p) {
+    public TestTask(Context p) {
 
         parent = p;
     }
 
-    public String doInBackground(String... urls) {
+
+    public String doInBackground(Void... unused) {
         String message = "Successfully downloaded!";
         try {
-            String urlToDownloadFrom = urls[0];
-            // Download from that URL...
-            throw new IOException("test");
+            throw new IOException("test");// Network communication would go here;
         } catch (IOException e) {
             message = e.toString();
         }

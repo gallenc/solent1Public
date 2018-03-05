@@ -1,4 +1,4 @@
-package com.example.cgallen.asynctasks1;
+package com.example.cgallen.examples;
 
 
         import android.support.v7.app.AppCompatActivity;
@@ -14,6 +14,8 @@ package com.example.cgallen.asynctasks1;
         import java.io.InputStreamReader;
         import java.io.OutputStream;
         import android.app.AlertDialog;
+
+        import com.example.cgallen.asynctasks1.R;
 
 public class MainActivityPost extends AppCompatActivity implements View.OnClickListener{
 

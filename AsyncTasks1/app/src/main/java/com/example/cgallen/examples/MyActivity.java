@@ -1,17 +1,13 @@
-package com.example.cgallen.asynctasks1;
+package com.example.cgallen.examples;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.AsyncTask;
 
-import java.io.PrintWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 
-import android.content.Context;
 import android.app.AlertDialog;
 import android.os.Environment;
 import android.view.View;
-import android.view.View.OnClickListener;
 
 public class MyActivity extends AppCompatActivity {
     class InnerTestTask extends AsyncTask<String, Void, String> {
