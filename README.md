@@ -22,7 +22,9 @@ Once this is done, the SDK path should be set automatically (students will not n
 3. to stop git saving password etc
 
 AVOID checking the "Git Credential Manager" checkbox during the Git for Windows installer, or (after installation) run bash shell as Administrator and use 
-```git config --edit --system 
+```
+git config --edit --system 
+
 ```
 to remove the helper = manager line so that it is no longer registered as a credential helper.
 To disable the OpenSSH credentials popup too. use git config --edit --global and insert:
