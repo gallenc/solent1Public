@@ -68,6 +68,8 @@ public class PostArtistActivity extends AppCompatActivity implements OnClickList
                     + "&song=" + song
                     + "&year=" + year;
 
+            System.out.println("AAA POST DATA:"+postData);
+
             HttpURLConnection conn = null;
             try {
                 URL url = new URL(BASE_URL);
