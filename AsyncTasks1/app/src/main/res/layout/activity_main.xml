@@ -15,7 +15,7 @@
         android:id="@+id/artist"
         android:inputType="textCapSentences|textAutoCorrect|textMultiLine"
         android:textSize="8pt"
-        android:hint="@string/editPrompt"
+        android:hint="@string/artistPrompt"
         />
 
     <Button
