@@ -19,6 +19,8 @@ import java.io.InputStreamReader;
 public class MainActivityGet extends AppCompatActivity implements View.OnClickListener {
 
     class MyTask extends AsyncTask<Void, Void, String> {
+
+        @Override
         public String doInBackground(Void... unused) {
             HttpURLConnection conn = null;
             try {
@@ -44,8 +46,9 @@ public class MainActivityGet extends AppCompatActivity implements View.OnClickLi
             }
         }
 
+        @Override
         public void onPostExecute(String result) {
-            EditText et1 = (EditText) findViewById(R.id.et1);
+            EditText et1 = (EditText) findViewById(R.id.artist);
             et1.setText(result);
         }
     }
@@ -54,10 +57,11 @@ public class MainActivityGet extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button go = (Button) findViewById(R.id.btngo);
+        Button go = (Button) findViewById(R.id.btnGetSongs);
         go.setOnClickListener(this);
     }
 
+    @Override
     public void onClick(View v) {
         MyTask t = new MyTask();
         t.execute();
