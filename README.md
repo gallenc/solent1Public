@@ -19,6 +19,18 @@ Once this is done, the SDK path should be set automatically (students will not n
 
 2. to view logcat ( android logs) use Alt 6
 
+3. to stop git saving password etc
+
+AVOID checking the "Git Credential Manager" checkbox during the Git for Windows installer, or (after installation) run bash shell as Administrator and use 
+```git config --edit --system 
+```
+to remove the helper = manager line so that it is no longer registered as a credential helper.
+To disable the OpenSSH credentials popup too. use git config --edit --global and insert:
+```
+[core]
+    askpass =
+```
+
 # GIT
 http://www.free-map.org.uk/course/mad/git_cheat_sheet.docx)
 
