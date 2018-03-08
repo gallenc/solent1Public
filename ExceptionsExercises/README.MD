@@ -1,4 +1,4 @@
-## exceptions exercies
+## Eclipse exceptions exercies
 load in eclipse
 
 http://www.free-map.org.uk/course//mad/part8.php 
