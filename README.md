@@ -12,6 +12,8 @@ username dfti2018 (password seperate)
 ## contents
 * Introduction (Session 1) 
 * Layouts and Event Handling (Session 2) https://github.com/gallenc/solent1Public/tree/master/HelloWorld2
+** http://www.free-map.org.uk/course//mad/part2.php feet to meters
+** https://github.com/gallenc/solent1Public/tree/master/ReportProblems
 * Mapping (Sessions 3 and 4) https://github.com/gallenc/solent1Public/tree/master/HelloMap2
 * Menus and Multiple Activities (Sessions 5 and 6) https://github.com/gallenc/solent1Public/tree/master/HelloMap3
 * Preferences (Sessions 7 and 8) https://github.com/gallenc/solent1Public/tree/master/HelloMap4
