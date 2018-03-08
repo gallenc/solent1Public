@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AsyncTasks1</string>
+    <string name="app_name">AsyncTasksJson</string>
 
     <string name="getSongs">Get Songs for Artist</string>
     <string name="addSong">Add Song</string>
