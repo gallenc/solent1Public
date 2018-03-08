@@ -4,10 +4,27 @@
 
 
 # solent1Public
-Miscellaneous solent work
+Miscellaneous solent work in support of Mobile Application Design
 http://www.free-map.org.uk/course
 
 username dfti2018 (password seperate)
+
+## contents
+* Introduction (Session 1) 
+* Layouts and Event Handling (Session 2) https://github.com/gallenc/solent1Public/tree/master/HelloWorld2
+* Mapping (Sessions 3 and 4) https://github.com/gallenc/solent1Public/tree/master/HelloMap2
+* Menus and Multiple Activities (Sessions 5 and 6) https://github.com/gallenc/solent1Public/tree/master/HelloMap3
+* Preferences (Sessions 7 and 8) https://github.com/gallenc/solent1Public/tree/master/HelloMap4
+* Lists (Sessions 9 and 10) https://github.com/gallenc/solent1Public/tree/master/HelloMap5
+* Exceptions (Session 11) 
+* File I/O (Session 12) https://github.com/gallenc/solent1Public/tree/master/MiscExamples - android studio unit tests
+* AsyncTask and Network Communication (Sessions 13 and 14)
+* JSON parsing (Sessions 15 and 16)
+* Further Mapping: Markers (Session 17; Session 18 is catchup)
+* Location and GPS (Session 19; Session 20 is catchup)
+* Intro to Android 6 Permissions Model (optional advanced session, Session 21)
+* Interfaces (Session 22)
+* Fragments (Sessions 23 and 24)
 
 ## Android Studio Tips
 1. Import settings
