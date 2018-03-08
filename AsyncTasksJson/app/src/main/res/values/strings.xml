@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">AsyncTasks1</string>
+
+    <string name="getSongs">Get Songs for Artist</string>
+    <string name="addSong">Add Song</string>
+    <string name="artist">Artist Name</string>
+    <string name="artistPrompt">Enter Artist Name</string>
+    <string name="song">Song Title</string>
+    <string name="songPrompt">Enter Song Title</string>
+    <string name="year">Song Year</string>
+    <string name="yearPrompt">Enter Song Year</string>
+</resources>
