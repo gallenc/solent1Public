@@ -12,15 +12,19 @@ username dfti2018 (password seperate)
 ## contents
 * Introduction (Session 1) 
 * Layouts and Event Handling (Session 2) https://github.com/gallenc/solent1Public/tree/master/HelloWorld2
-** http://www.free-map.org.uk/course//mad/part2.php feet to meters
+** https://github.com/gallenc/solent1Public/tree/master/FeetToMetresActivity
 ** https://github.com/gallenc/solent1Public/tree/master/ReportProblems
 * Mapping (Sessions 3 and 4) https://github.com/gallenc/solent1Public/tree/master/HelloMap2
 * Menus and Multiple Activities (Sessions 5 and 6) https://github.com/gallenc/solent1Public/tree/master/HelloMap3
 * Preferences (Sessions 7 and 8) https://github.com/gallenc/solent1Public/tree/master/HelloMap4
 * Lists (Sessions 9 and 10) https://github.com/gallenc/solent1Public/tree/master/HelloMap5
-* Exceptions (Session 11) 
+* Exceptions (Session 11) https://github.com/gallenc/solent1Public/tree/master/ExceptionsAndroid
+** https://github.com/gallenc/solent1Public/blob/master/ExceptionsExercises Eclipse
 * File I/O (Session 12) https://github.com/gallenc/solent1Public/tree/master/MiscExamples - android studio unit tests
+** https://github.com/gallenc/solent1Public/tree/master/EditText1
+** https://github.com/gallenc/solent1Public/tree/master/AddressBook1
 * AsyncTask and Network Communication (Sessions 13 and 14)
+** https://github.com/gallenc/solent1Public/tree/master/AsyncTasks1
 * JSON parsing (Sessions 15 and 16)
 * Further Mapping: Markers (Session 17; Session 18 is catchup)
 * Location and GPS (Session 19; Session 20 is catchup)
