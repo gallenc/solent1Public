@@ -1,5 +1,6 @@
 package com.example.cgallen.asynctasks1;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -36,8 +37,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     private static final String ARTIST_QUERY = "artist=";
     private static final String REQUEST_JSON = "&format=json";
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,21 +68,30 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     @Override
     public void onClick(View view) {
         EditText artist = (EditText) findViewById(R.id.artist);
-        MainActivity.GetSongsTask t = new MainActivity.GetSongsTask();
+        MainActivity.GetSongsTask t = new MainActivity.GetSongsTask(this);
         t.execute(artist.getText().toString());
     }
 
     class GetSongsTask extends AsyncTask<String, Void, String> {
 
         AlertDialog.Builder alertDialogBuilder;
+        Context parent;
 
-        protected void onPreExecute() {
-            super.onPreExecute();
-            alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
+        GetSongsTask(Context p) {
+            super();
+            parent = p;
+            alertDialogBuilder = new AlertDialog.Builder(p);
         }
+
+        // alternative to using context sent to async task
+        //protected void onPreExecute() {
+        //    super.onPreExecute();
+        //    alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
+        //}
 
         @Override
         public String doInBackground(String... input) {
+            // Variable Arguments (Varargs) in Java 5 using ...
             String artist = input[0];
 
             HttpURLConnection conn = null;
