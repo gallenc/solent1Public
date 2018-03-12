@@ -74,13 +74,17 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     class GetSongsTask extends AsyncTask<String, Void, String> {
 
-        AlertDialog.Builder alertDialogBuilder;
+        // AlertDialog.Builder alertDialogBuilder;
         Context parent;
+
+        GetSongsTask(){
+            super();
+        }
 
         GetSongsTask(Context p) {
             super();
             parent = p;
-            alertDialogBuilder = new AlertDialog.Builder(p);
+            //alertDialogBuilder = new AlertDialog.Builder(p);
         }
 
         // alternative to using context sent to async task
@@ -155,7 +159,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 }
                 songList.setText(text);
             } catch (JSONException e) {
-                alertDialogBuilder.setMessage(e.toString()).setPositiveButton("OK", null).show();
+                // alertDialogBuilder.setMessage(e.toString()).setPositiveButton("OK", null).show();
+                new  AlertDialog.Builder(MainActivity.this).setMessage(e.toString()).setPositiveButton("OK", null).show();
             }
 
         }
