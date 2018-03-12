@@ -18,6 +18,7 @@ public class ExampleMapOverlayActivity extends Activity {
 
     MapView mv;
     ItemizedIconOverlay<OverlayItem> items;
+    ItemizedIconOverlay.OnItemGestureListener<OverlayItem> markerGestureListener;
 
 
     @Override
@@ -29,18 +30,35 @@ public class ExampleMapOverlayActivity extends Activity {
 
         setContentView(R.layout.activity_example_overlay_map);
         mv = (MapView) findViewById(R.id.overlaymap);
+        mv.setBuiltInZoomControls(true);
 
         mv.getController().setZoom(14);
         mv.getController().setCenter(new GeoPoint(51.05, -0.72));
 
+        markerGestureListener = new ItemizedIconOverlay.OnItemGestureListener<OverlayItem>() {
+            public boolean onItemLongPress(int i, OverlayItem item)
+            {
+                Toast.makeText(ExampleMapOverlayActivity.this, item.getSnippet(), Toast.LENGTH_SHORT).show();
+                return true;
+            }
 
-        items = new ItemizedIconOverlay<OverlayItem>(this, new ArrayList<OverlayItem>(), null);
+            public boolean onItemSingleTapUp(int i, OverlayItem item)
+            {
+                Toast.makeText(ExampleMapOverlayActivity.this, item.getSnippet(), Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        };
+
+        items = new ItemizedIconOverlay<OverlayItem>(this, new ArrayList<OverlayItem>(), markerGestureListener);
+
         OverlayItem fernhurst = new OverlayItem("Fernhurst", "Village in West Sussex", new GeoPoint(51.05, -0.72));
         OverlayItem blackdown = new OverlayItem("Blackdown", "highest point in West Sussex", new GeoPoint(51.0581, -0.6897));
+        // NOTE is just this.getDrawable() if supporting API 21+ only
+        fernhurst.setMarker(getResources().getDrawable(R.drawable.marker));
+
         items.addItem(fernhurst);
         items.addItem(blackdown);
         mv.getOverlays().add(items);
-
 
     }
 }
