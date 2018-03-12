@@ -3,6 +3,7 @@ package com.example.cgallen.asynctasks1;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -17,10 +18,12 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 
 public class PostArtistActivity extends AppCompatActivity implements OnClickListener {
+    private static final String LOG_TAG = MainActivity.class.getName();
 
-    private static final String BASE_URL = "http://www.free-map.org.uk/course/mad/ws/hits.php";
+    private static final String BASE_URL = "http://www.free-map.org.uk/course/mad/ws/addhit.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,14 +67,20 @@ public class PostArtistActivity extends AppCompatActivity implements OnClickList
             String artist = input[0];
             String song = input[1];
             String year = input[2];
-            String postData = "artist=" + artist
-                    + "&song=" + song
-                    + "&year=" + year;
 
-            System.out.println("AAA POST DATA:"+postData);
+
+
 
             HttpURLConnection conn = null;
             try {
+
+                String postData = "artist=" + URLEncoder.encode(artist, "UTF-8")
+                        + "&song=" + URLEncoder.encode(song, "UTF-8")
+                        + "&year=" + URLEncoder.encode(year, "UTF-8");
+
+                Log.d(LOG_TAG,"AAA POST DATA:"+postData);
+
+
                 URL url = new URL(BASE_URL);
                 conn = (HttpURLConnection) url.openConnection();
 

@@ -23,10 +23,14 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
+
 import android.app.AlertDialog;
+import android.util.Log;
 
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
+    private static final String LOG_TAG = MainActivity.class.getName();
 
     private static final String BASE_URL = "http://www.free-map.org.uk/course/mad/ws/hits.php";
     private static final String ARTIST_QUERY = "artist=";
@@ -81,9 +85,13 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         @Override
         public String doInBackground(String... input) {
             String artist = input[0];
-            String queryUrl = BASE_URL + "?" + ARTIST_QUERY + artist + REQUEST_JSON;
+
             HttpURLConnection conn = null;
             try {
+                String queryUrl = BASE_URL + "?" + ARTIST_QUERY +
+                        URLEncoder.encode(artist, "UTF-8")
+                        + REQUEST_JSON;
+                Log.d(LOG_TAG,"request url: "+queryUrl );
                 URL url = new URL(queryUrl);
                 conn = (HttpURLConnection) url.openConnection();
                 InputStream in = conn.getInputStream();
@@ -99,6 +107,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                     return "HTTP ERROR: " + conn.getResponseCode();
                 }
             } catch (IOException e) {
+                Log.e(LOG_TAG,"problem loading song",e);
                 return e.toString();
             } finally {
                 if (conn != null) {
@@ -127,13 +136,13 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                     String ID = curObj.getString("ID");
                     String quantity = curObj.getString("quantity");
 
-                    text.append("song='" + song + " " +
-                            ", artist='" + artist + " " +
-                            ", year='" + year + " " +
-                            ", month='" + month + " " +
-                            ", chart='" + chart + " " +
+                    text.append("song=" + song + " " +
+                            ", artist=" + artist + " " +
+                            ", year=" + year + " " +
+                            ", month=" + month + " " +
+                            ", chart=" + chart + " " +
                             ", ID='" + ID + " " +
-                            ", quantity='" + quantity +
+                            ", quantity=" + quantity +
                             "\n-----\n");
                 }
                 songList.setText(text);

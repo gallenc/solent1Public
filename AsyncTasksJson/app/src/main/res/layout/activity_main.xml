@@ -8,13 +8,14 @@
 <!--Write an Android app containing an EditText, a -->
     <!--"Download" button and a -->
     <!--TextView below which occupies the rest of the Activity.-->
+    <!-- android:inputType="textCapSentences|textAutoCorrect|textMultiLine" -->
     <EditText
         android:gravity="top"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/artist"
-        android:inputType="textCapSentences|textAutoCorrect|textMultiLine"
-        android:textSize="8pt"
+        android:inputType="text"
+        android:textSize="6pt"
         android:hint="@string/artistPrompt"
         />
 
@@ -35,7 +36,7 @@
         android:gravity="top"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="8pt"
+        android:textSize="6pt"
         android:id="@+id/songList" />
 
     </ScrollView>
