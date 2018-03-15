@@ -33,6 +33,7 @@
         <activity android:name=".ExampleListActivity2" android:label="@string/listActivity2" />
 
         <activity android:name=".ExampleMapOverlayActivity" android:label="@string/mapOverlayActivity" />
+        <activity android:name=".MapOverlayAppActivity" android:label="@string/mapOverlayAppActivity" />
 
     </application>
 

@@ -7,4 +7,5 @@
     <item android:id="@+id/listActivity1" android:title="@string/listActivity1"/>
     <item android:id="@+id/listActivity2" android:title="@string/listActivity2"/>
     <item android:id="@+id/mapOverlayActivity" android:title="@string/mapOverlayActivity"/>
+    <item android:id="@+id/mapOverlayAppActivity" android:title="@string/mapOverlayAppActivity"/>
 </menu>
