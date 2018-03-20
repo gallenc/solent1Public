@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Our Form Validation Example</title>
+<script type="text/javascript" src="scripts/validation.js"></script>
+</head>
+<body onload="main()">
+
+	<form id="login">
+
+		<p>
+			<input type="text" name="userName" placeholder="name">
+		</p>
+		<p id="userNameRequiredError" style="display: none">Required</p>
+		<p>
+			<input type="password" name="password" placeholder="password">
+		</p>
+		<p id="passwordRequiredError" style="display: none">Required</p>
+		<input type="submit">
+	</form>
+
+</body>
+</html>

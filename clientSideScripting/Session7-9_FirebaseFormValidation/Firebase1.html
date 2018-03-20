@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Firebase Validation Example</title>
+<link rel="icon" href="flavicon.png">
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA9lMhBzxl5IyOxXIh0mYO8J5gIog00xiQ",
+    authDomain: "solentexample1.firebaseapp.com",
+    databaseURL: "https://solentexample1.firebaseio.com",
+    projectId: "solentexample1",
+    storageBucket: "",
+    messagingSenderId: "710337451739"
+  };
+  firebase.initializeApp(config);
+</script>
+<script type="text/javascript" src="scripts/validationFirebase.js"></script>
+</head>
+<body onload="main()">
+<!-- name
+age
+location
+email
+phone_number
+address_line_1
+post_code -->
+<h1>Input Form</h1>
+	<form id="addDetails">
+		<p><input type="text" name="name" placeholder="name"></p>
+		<p id="nameRequiredError" style="display: none">Name Required</p>
+		
+		<p><input type="text" name="age" placeholder="age"></p>
+		<p id="ageRequiredError" style="display: none">Age Required</p>
+		
+		<p>	<input type="text" name="location" placeholder="location"></p>
+		<p id="locationRequiredError" style="display: none">Location Required</p>
+		
+		<p>	<input type="text" name="email" placeholder="email"></p>
+		<p id="emailRequiredError" style="display: none">Email Required</p>
+		
+		<p>	<input type="text" name="phone_number" placeholder="Phone Number"></p>
+		<p id="phone_numberRequiredError" style="display: none">Phone Number Required</p>
+		
+		<p>	<input type="text" name="address_line_1" placeholder="Address Line 1"></p>
+		<p id="address_line_1_RequiredError" style="display: none">Address Required</p>
+
+	    <p>	<input type="text" name="post_code" placeholder="Post Code"></p>
+		<p id="post_code_RequiredError" style="display: none">Post Code Required</p>
+		
+		<input type="submit">
+	</form>
+	
+	<h1>table based output</h1>
+	<table id="contact-table" style="width: 100%">
+		<tr style="text-align: left;">
+			<th>name</th>
+			<th>age</th>
+			<th>location</th>
+			<th>email</th>
+			<th>phone number</th>
+			<th>address line1</th>
+			<th>post code</th>
+		</tr>
+	</table>
+	
+    <h1>simple text output</h1>
+    <p id="contact-list"></p>
+
+</body>
+</html>
+
+
+
+
