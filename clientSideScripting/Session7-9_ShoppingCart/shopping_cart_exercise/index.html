@@ -1,0 +1,156 @@
+<!-- 
+     Joe Appleton 
+     21/02/16
+     shopping cart
+     varsion: 1 
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  
+    <!--  <link rel="stylesheet" type="text/css" href="css/normalize.css"> -->
+    <!-- main style sheet -->  
+    <link rel="stylesheet" type="text/css" href="css/style2.css">
+    <!-- include google font -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>  
+    <script type="text/jscript" src="script/main.js"></script>  
+    <title>Shopping Cart</title>
+  </head>
+
+  <body onload="main()">
+      <h1> Solent Online Store</h1>  
+            
+     
+      <h2 class="sub-heading">Free shipping for orders over £100!</h2>
+      <div id="cart-items" class="grid">
+    
+    <!---
+                *************
+                * Start form *
+
+    -->
+    <form id="productForm">
+      <section class="product_list">
+         <!-- 
+              Product 1 
+          -->
+          <div class="product">   
+              <div class="_column" >
+                        <p>Milk Tray (£5) </p>
+                        <img src="img/milk_tray.jpg"> 
+                        
+             </div> <!-- end ._column taxes-->   
+              <div class="_column topPadding">
+                      <label>Add to cart</label><input type="checkbox" name="product" value="mt">  
+             </div> <!-- end ._column taxesl -->   
+             
+              
+              <div class="_column topPadding">
+                        <input type="number"  value="1" name="mt-quantity"> 
+             </div> <!-- end ._column taxesl -->  
+
+            <div class="_column topPaddingTotal">
+                 <p>Total: <span  id="mt-total"> £0 </span> </p>
+            </div> <!-- end ._column taxesl -->   
+               
+          </div> <!-- end product --><!-- end product -->
+         
+          
+          
+          <!-- 
+              Product 2
+          -->    
+           <div class="product">   
+              <div class="_column" >
+                        <p>Blender (£25) </p>
+                        <img src="img/blender.jpg"> 
+                        
+             </div> <!-- end ._column taxesl -->   
+              <div class="_column topPadding">
+                      <label>Add to cart</label><input type="checkbox" name="product" value="blender">  
+             </div> <!-- end ._column taxesl -->   
+              <div class="_column topPadding">
+                        <input type="number"  value="1" name="blender-quantity"> 
+             </div> <!-- end ._column taxesl -->      
+               
+              <div class="_column topPaddingTotal">
+                 <p>Total: <span  id="blender-total"> £0 </span> </p>
+             </div> <!-- end ._column taxesl -->      
+               
+          </div> <!-- end product -->
+          
+          
+          
+          <!-- 
+              Product 3
+          -->
+          <div class="product">   
+              <div class="_column" >
+                        <p>Nike T (£25) </p>
+                        <img src="img/nike_tshirt.jpg"> 
+                        
+             </div> <!-- end ._column -->   
+              <div class="_column topPadding">
+                      <label>Add to cart</label><input type="checkbox" name="product" value="tshirt">  
+             </div> <!-- end ._column  -->   
+              <div class="_column topPadding">
+                        <input type="number"  value="1" name="tshirt-quantity" > 
+             </div> <!-- end ._column -->      
+             <div class="_column topPaddingTotal">
+                 <p>Total: <span  id="tshirt-total"> £0 </span> </p>
+             </div> <!-- end ._column  -->   
+              
+          </div> <!-- end product -->
+          
+          
+          
+          <!-- 
+              Product 4
+          -->
+            <div class="product">   
+              <div class="_column" >
+                        <p>Orb (£100) </p>
+                        <img src="img/orb.jpg"> 
+                        
+             </div> <!-- end ._column taxesl -->   
+              <div class="_column topPadding">
+                      <label>Add to cart</label><input type="checkbox" name="product" value="orb">  
+             </div> <!-- end ._column taxesl -->   
+              <div class="_column topPadding">
+                        <input type="number"  value="1" name="orb-quantity"> 
+             </div> <!-- end ._column taxesl -->     
+                
+              <div class="_column topPaddingTotal">
+                 <p>Total: <span  id="orb-total"> £0 </span> </p>
+             </div> <!-- end ._column taxesl -->       
+               
+          </div> <!-- end product -->
+      </section> 
+       
+          
+      <div class="summary"> 
+           <p class="cart-totals-key">Sub Total</p> <!-- end total -->
+           <div class="cart-totals-value" id="sub-total">&pound;0.00</div>
+          
+         
+            <p class="cart-totals-key">Shipping</p>
+            <p class="cart-totals-value" id="shipping">£0.00</p>
+       
+            <p class="cart-totals-key">Taxes (20%)</p>
+            <p class="cart-totals-value" id="taxes">£0.00</p>
+       
+            <p class="cart-totals-key">Total</p> <!-- end total -->
+            <p class="cart-totals-value"  id="total">£0.00</p>
+            <input type="submit" value="Checkout" class="bttn">
+          
+      </div> <!-- end .summary -->    
+                
+      </div> <!-- end #cart-items -->
+    </form>  
+     
+      
+      
+ </body>
+    
+</html>      
