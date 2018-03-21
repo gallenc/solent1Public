@@ -115,8 +115,6 @@ function validateForm(event) {
 	if (formValid){
 		console.log("form valid - saving to firebase");
 		//grab a reference to our firebase database
-
-
 		var key = database.ref().child('details').push().key;
 
 		//the key is then appended to our database reference and set

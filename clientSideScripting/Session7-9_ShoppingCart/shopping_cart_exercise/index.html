@@ -8,6 +8,19 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA9lMhBzxl5IyOxXIh0mYO8J5gIog00xiQ",
+    authDomain: "solentexample1.firebaseapp.com",
+    databaseURL: "https://solentexample1.firebaseio.com",
+    projectId: "solentexample1",
+    storageBucket: "",
+    messagingSenderId: "710337451739"
+  };
+  firebase.initializeApp(config);
+</script>
   
     <!--  <link rel="stylesheet" type="text/css" href="css/normalize.css"> -->
     <!-- main style sheet -->  
@@ -146,7 +159,7 @@
             <h6>Order Summary</h6>
             <p id="orderSummary"></p>
             
-            <input type="submit" value="Checkout" class="bttn">
+            <input id="checkoutBtn" type="submit" value="Checkout" class="bttn">
           
       </div> <!-- end .summary -->    
                 
