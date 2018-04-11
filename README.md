@@ -25,7 +25,8 @@ username dfti2018 (password seperate)
 ** https://github.com/gallenc/solent1Public/tree/master/AddressBook1
 * AsyncTask and Network Communication (Sessions 13 and 14)
 ** https://github.com/gallenc/solent1Public/tree/master/AsyncTasks1
-* JSON parsing (Sessions 15 and 16)
+* JSON parsing (Sessions 15 and 16) 
+** https://github.com/gallenc/solent1Public/tree/master/AsyncTasksJson
 * Further Mapping: Markers (Session 17; Session 18 is catchup)
 * Location and GPS (Session 19; Session 20 is catchup)
 * Intro to Android 6 Permissions Model (optional advanced session, Session 21)
