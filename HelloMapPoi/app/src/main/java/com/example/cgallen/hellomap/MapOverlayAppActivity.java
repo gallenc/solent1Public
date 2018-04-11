@@ -95,10 +95,10 @@ public class MapOverlayAppActivity extends Activity {
                             throw new IllegalArgumentException("invalid string " + line +
                                     " cannot be split into title, snippet, detail ,lat, lon");
                         String title = components[0];
-                        String type = components[2];
-                        String snippet = components[3];
-                        String latstr = components[4];
-                        String lonstr = components[5];
+                        String type = components[1];
+                        String snippet = components[2];
+                        String latstr = components[3];
+                        String lonstr = components[4];
                         double lat = Double.parseDouble(latstr);
                         double lon = Double.parseDouble(lonstr);
 
