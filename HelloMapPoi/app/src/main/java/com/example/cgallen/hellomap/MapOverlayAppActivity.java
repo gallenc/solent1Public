@@ -2,6 +2,7 @@ package com.example.cgallen.hellomap;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
@@ -43,7 +44,8 @@ public class MapOverlayAppActivity extends Activity {
         mv.setBuiltInZoomControls(true);
 
         mv.getController().setZoom(14);
-        mv.getController().setCenter(new GeoPoint(51.05, -0.72));
+        //-1.4011,50.9319 crown pub
+        mv.getController().setCenter(new GeoPoint(50.9319, -1.4011));
 
         markerGestureListener = new ItemizedIconOverlay.OnItemGestureListener<OverlayItem>() {
             public boolean onItemLongPress(int i, OverlayItem item)
@@ -61,6 +63,16 @@ public class MapOverlayAppActivity extends Activity {
 
         items = new ItemizedIconOverlay<OverlayItem>(this, new ArrayList<OverlayItem>(), markerGestureListener);
 
+        // TODO REMOVE this simply adds one marker for test
+        //OverlayItem blackdown = new OverlayItem("Blackdown", "highest point in West Sussex", new GeoPoint(51.0581, -0.6897));
+        // NOTE is just this.getDrawable() if supporting API 21+ only
+       // blackdown.setMarker(getResources().getDrawable(R.drawable.marker));
+        // items.addItem(blackdown);
+       // ArrayList<OverlayItem> itemslist2 = new ArrayList<OverlayItem>();
+       // itemslist2.add(blackdown);
+       // items.addItems(itemslist2);
+
+        // this adds from file
         ArrayList<OverlayItem> itemslist = csvFileToOverlays();
         items.addItems(itemslist);
 
@@ -97,14 +109,21 @@ public class MapOverlayAppActivity extends Activity {
                         String title = components[0];
                         String type = components[1];
                         String snippet = components[2];
-                        String latstr = components[3];
-                        String lonstr = components[4];
+                        String lonstr = components[3];
+                        String latstr = components[4];
                         double lat = Double.parseDouble(latstr);
                         double lon = Double.parseDouble(lonstr);
 
                         OverlayItem overlayItem = new OverlayItem(title, snippet, new GeoPoint(lat, lon));
-                        // NOTE is just this.getDrawable() if supporting API 21+ only
-                        //overlayItem.setMarker(getResources().getDrawable(R.drawable.marker));
+                        Log.i(LOG_TAG,"added point of interest from: title:" +title+
+                                ", snippet " +snippet+
+                                        ", type " +type+
+                                        ", lat " +lat+
+                                        ", lon " +lon);
+
+                        Drawable marker =  typeToMarker(type);
+                        if (marker!=null) overlayItem.setMarker(marker);
+
                         overalyItems.add(overlayItem);
                     } catch (Exception e){
                         Log.e(LOG_TAG,"problem parsing line:"+line,e);
@@ -126,6 +145,25 @@ public class MapOverlayAppActivity extends Activity {
 
     private void popupMessage(String message) {
         new AlertDialog.Builder(this).setPositiveButton("OK", null).setMessage(message).show();
+    }
+
+    private Drawable typeToMarker(String type){
+        // NOTE is just this.getDrawable() if supporting API 21+ only
+        Drawable marker =null;
+        switch (type) {
+            case "pub":  marker = getResources().getDrawable(R.drawable.pub);
+                break;
+            case "restaurant":  marker = getResources().getDrawable(R.drawable.restaurant);
+                break;
+            case "city":  marker = getResources().getDrawable(R.drawable.marker);
+                break;
+            default: marker=null;
+                break;
+        }
+
+
+
+        return marker;
     }
 
 }
