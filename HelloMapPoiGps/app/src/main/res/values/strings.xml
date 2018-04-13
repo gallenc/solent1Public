@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">HelloMapPoi</string>
+    <string name="button1">GO!</string>
+    <string name="button2">Reset</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="choosemap">Choose Map</string>
+    <string name="changeLocation">Change Location</string>
+    <string name="setdefaults">Set Defaults</string>
+    <string name="regularview">Regular View</string>
+    <string name="cyclemapview">Cycle Map View</string>
+    <string name="selectmap">Select Map</string>
+    <string name="selectmap2">Select Map List Activity</string>
+    <string name="chooseLocation">Set Location</string>
+    <string name="listActivity1">List Activity 1</string>
+    <string name="listActivity2">List Activity 2</string>
+    <string name="mapOverlayActivity">Example Map Overlay Activity</string>
+    <string name="mapOverlayAppActivity">Map with Points of Interest</string>
+</resources>

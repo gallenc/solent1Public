@@ -1,0 +1,48 @@
+The Crown,pub,nice pub,-1.4011,50.9319
+Charlie Chans,restaurant,A very interesting place,-1.39916,50.8983
+Goblets,pub,A very interesting place,-1.40455,50.9088
+Rat and Parrot,pub,A very interesting place,-1.40442,50.9085
+Kutis Royal Thai Pier,restaurant,A very interesting place,-1.40703,50.897
+ASDA Cafe,restaurant,A very interesting place,-1.40777,50.906
+Cafe Giardino,restaurant,A very interesting place,-1.40733,50.9037
+Pizza Hut,restaurant,A very interesting place,-1.40737,50.9034
+Yo! Sushi,restaurant,A very interesting place,-1.40778,50.9036
+Nandos,restaurant,A very interesting place,-1.40747,50.9037
+Supreme Chinese Restaurant,restaurant,A very interesting place,-1.40364,50.905
+Bella Italia,restaurant,A very interesting place,-1.40469,50.9064
+Slug and Lettuce,pub,A very interesting place,-1.40471,50.9063
+The Waterfront,pub,A very interesting place,-1.38101,50.9103
+Nicks Restaurant,restaurant,A very interesting place,-1.39957,50.9017
+The Joiners,pub,A very interesting place,-1.39648,50.9045
+Plume of Feathers,pub,A very interesting place,-1.39688,50.9051
+Avondale House,pub,A very interesting place,-1.40394,50.9129
+Giddy Bridge,pub,A very interesting place,-1.40448,50.911
+Shooting Star,pub,A very interesting place,-1.39588,50.9165
+Massala,restaurant,A very interesting place,-1.38006,50.8965
+The Victoria,pub,A very interesting place,-1.38049,50.8949
+Saras,restaurant,A very interesting place,-1.39062,50.9271
+Prezzo,restaurant,A very interesting place,-1.39848,50.8983
+Unit Nightclub,pub,A very interesting place,-1.39923,50.9104
+The London Hotel,pub,A very interesting place,-1.39696,50.8979
+Bellinis,restaurant,A very interesting place,-1.3986,50.8978
+The Standing Order (JD Wetherspoon),pub,A very interesting place,-1.40377,50.9009
+El Rancho,restaurant,A very interesting place,-1.40366,50.8992
+La Margherita,restaurant,A very interesting place,-1.40469,50.8957
+Namaste Kerala,restaurant,A very interesting place,-1.40495,50.907
+Yatess,pub,A very interesting place,-1.40471,50.9066
+Que Pasa,pub,A very interesting place,-1.40419,50.906
+The Cricketers,pub,A very interesting place,-1.40498,50.9129
+Firehouse,pub,A very interesting place,-1.40343,50.9048
+Banana Wharf,restaurant,A very interesting place,-1.39084,50.8968
+The Fitzhugh,pub,A very interesting place,-1.41,50.9146
+La Cantina,restaurant,A very interesting place,-1.39273,50.8971
+La Regata,restaurant,A very interesting place,-1.40472,50.8967
+Ennios,restaurant,A very interesting place,-1.40515,50.8968
+The Red Lion,pub,A very interesting place,-1.40365,50.899
+Zen,restaurant,A very interesting place,-1.40363,50.8994
+Ship Inn,pub,A very interesting place,-1.38045,50.8938
+The Platform Tavern,pub,A very interesting place,-1.40355,50.8964
+Orange Rooms,pub,A very interesting place,-1.40484,50.9123
+Mono,pub,A very interesting place,-1.40464,50.9124
+The Bent Brief,pub,A very interesting place,-1.39656,50.9197
+Southampton,city,A very interesting place,-1.4042,50.9035

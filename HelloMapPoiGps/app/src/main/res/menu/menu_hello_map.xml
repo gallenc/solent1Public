@@ -1,0 +1,11 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/setlocation" android:title="@string/changeLocation"/>
+    <item android:id="@+id/choosemap" android:title="@string/choosemap"/>
+    <item android:id="@+id/setDefaults" android:title="@string/setdefaults"/>
+    <item android:id="@+id/selectMap2" android:title="@string/selectmap2"/>
+    <item android:id="@+id/listActivity1" android:title="@string/listActivity1"/>
+    <item android:id="@+id/listActivity2" android:title="@string/listActivity2"/>
+    <item android:id="@+id/mapOverlayActivity" android:title="@string/mapOverlayActivity"/>
+    <item android:id="@+id/mapOverlayAppActivity" android:title="@string/mapOverlayAppActivity"/>
+</menu>
