@@ -8,7 +8,7 @@ android {
         // was 26 targetSdkVersion is 22 or less in your build.gradle,as otherwise, Android will enforce runtime permission checking
         targetSdkVersion 22
         versionCode 1
-        versionName "1.0"
+        versionName "1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

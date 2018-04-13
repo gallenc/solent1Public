@@ -1,4 +1,4 @@
-
+﻿
 
 
 
@@ -28,7 +28,10 @@ username dfti2018 (password seperate)
 * JSON parsing (Sessions 15 and 16) 
 ** https://github.com/gallenc/solent1Public/tree/master/AsyncTasksJson
 * Further Mapping: Markers (Session 17; Session 18 is catchup)
+** https://github.com/gallenc/solent1Public/tree/master/HelloMapPoi
 * Location and GPS (Session 19; Session 20 is catchup)
+** https://github.com/gallenc/solent1Public/tree/master/HelloMapPoi
+
 * Intro to Android 6 Permissions Model (optional advanced session, Session 21)
 * Interfaces (Session 22)
 * Fragments (Sessions 23 and 24)

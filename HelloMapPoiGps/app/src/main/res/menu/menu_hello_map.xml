@@ -8,4 +8,6 @@
     <item android:id="@+id/listActivity2" android:title="@string/listActivity2"/>
     <item android:id="@+id/mapOverlayActivity" android:title="@string/mapOverlayActivity"/>
     <item android:id="@+id/mapOverlayAppActivity" android:title="@string/mapOverlayAppActivity"/>
+    <item android:id="@+id/mapOverlayGpsActivity" android:title="@string/mapOverlayGpsActivity"/>
+
 </menu>

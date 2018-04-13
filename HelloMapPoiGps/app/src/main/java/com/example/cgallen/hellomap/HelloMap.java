@@ -131,8 +131,11 @@ public class HelloMap extends Activity {
         } else if (item.getItemId() == R.id.mapOverlayActivity){
             Intent requestIntent = new Intent(this, ExampleMapOverlayActivity.class);
             startActivityForResult(requestIntent, 4);
-        }   else if (item.getItemId() == R.id.mapOverlayAppActivity) {
+        } else if (item.getItemId() == R.id.mapOverlayAppActivity) {
             Intent requestIntent = new Intent(this, MapOverlayAppActivity.class);
+            startActivityForResult(requestIntent, 4);
+        } else if (item.getItemId() == R.id.mapOverlayGpsActivity) {
+            Intent requestIntent = new Intent(this, MapOverlayGpsActivity.class);
             startActivityForResult(requestIntent, 4);
         }
 

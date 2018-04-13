@@ -16,4 +16,5 @@
     <string name="listActivity2">List Activity 2</string>
     <string name="mapOverlayActivity">Example Map Overlay Activity</string>
     <string name="mapOverlayAppActivity">Map with Points of Interest</string>
+    <string name="mapOverlayGpsActivity">Map with your current location</string>
 </resources>
