@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HelloMap.iml" filepath="$PROJECT_DIR$/HelloMap.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/HelloMap-app.iml" filepath="$PROJECT_DIR$/app/HelloMap-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/solent1Public-HelloMap.iml" filepath="$PROJECT_DIR$/solent1Public-HelloMap.iml" />
     </modules>
   </component>
 </project>
