@@ -13,6 +13,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import org.osmdroid.config.Configuration;
+import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.ItemizedIconOverlay;
@@ -44,6 +45,7 @@ public class MapOverlayGpsActivity extends Activity implements LocationListener 
         mv.setBuiltInZoomControls(true);
 
         mv.getController().setZoom(14);
+        mv.getTileProvider().setTileSource(TileSourceFactory.HIKEBIKEMAP);
 
         markerGestureListener = new ItemizedIconOverlay.OnItemGestureListener<OverlayItem>() {
             public boolean onItemLongPress(int i, OverlayItem item) {
