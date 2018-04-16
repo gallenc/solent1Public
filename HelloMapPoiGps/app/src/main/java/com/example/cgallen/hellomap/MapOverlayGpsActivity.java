@@ -69,7 +69,7 @@ public class MapOverlayGpsActivity extends Activity implements LocationListener 
            lat = location.getLatitude();
            lon = location.getLongitude();
        }
-        
+
         // center location
         mv.getController().setCenter(new GeoPoint(lat, lon));
         items = new ItemizedIconOverlay<OverlayItem>(this, new ArrayList<OverlayItem>(), markerGestureListener);
